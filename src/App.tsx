@@ -1,24 +1,44 @@
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
-
-import Icon from 'react-native-vector-icons/FontAwesome';
+import {Button, StyleSheet, Text, TextInput, View} from 'react-native';
 
 const App = () => {
-  console.log('test');
   return (
-    <View style={styles.container}>
-      <Text>Hello World</Text>
-      <Icon name="rocket" size={30} color={'green'} />
+    <View style={styles.appContainer}>
+      <View style={styles.inputContainer}>
+        <TextInput style={styles.textInput} placeholder="Your course goal!" />
+        <Button title="Add Goal" />
+      </View>
+      <View style={styles.goalsContainer}>
+        <Text>List of goals...</Text>
+      </View>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
-  container: {
+  appContainer: {
     flex: 1,
+    paddingTop: 50,
+    paddingHorizontal: 16,
+  },
+  inputContainer: {
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
     alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: '#fff',
+    marginBottom: 24,
+    borderBottomWidth: 1,
+    borderBottomColor: '#ccc',
+  },
+  textInput: {
+    borderWidth: 1,
+    borderColor: '#ccc',
+    width: '70%',
+    marginRight: 8,
+    padding: 8,
+  },
+  goalsContainer: {
+    flex: 5,
   },
 });
 
